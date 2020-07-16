@@ -1,0 +1,16 @@
+---
+  - name: Simple play to install multiple pkgs
+    hosts: all
+    gather_facts: true
+    become: yes
+    tasks:
+      - name: Installing webserver on centos family
+        yum:
+          name: httpd
+          state: present
+      - name: Installing java on centos family
+        yum:
+          name: java-1.8.0-openjdk
+          state: present
+        
+     
