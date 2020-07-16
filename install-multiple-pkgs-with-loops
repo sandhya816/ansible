@@ -1,0 +1,17 @@
+---
+  - hosts: all
+    gather_facts: false
+    become: yes
+    tasks:
+      - yum:
+         name: "{{item}}"
+         state: absent
+        loop:
+          - telnet
+          - wget
+          - java-1.8.0-openjdk
+          - httpd
+          - zip
+		  - unzip
+
+         
