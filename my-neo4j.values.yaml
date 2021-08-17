@@ -12,7 +12,7 @@ neo4j:
 
 volumes:
   data:
-    mode: defaultStorageClass
-    defaultStorageClass:
-      requests:
-        storage: 2Gi
+    mode: "volume"
+    volume:
+      persistentVolumeClaim:
+        claimName: my-neo4j-pvc
